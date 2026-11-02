@@ -169,8 +169,8 @@ details.pr[open] .in{animation:rise .35s ease}
 .cs h2{font-size:clamp(1.35rem,3.6vw,1.6rem);margin-bottom:14px;text-wrap:balance}
 .cs .cl{font-family:var(--mono);font-size:.74rem;color:var(--slate);letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px}
 .cs p{max-width:62ch}
-mark{color:inherit;padding:.04em .2em;margin:0 -.2em;border-radius:.35em .85em .4em .75em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:linear-gradient(104deg,rgba(249,70,21,0) .9%,rgba(249,70,21,.42) 2.4%,rgba(249,70,21,.28) 6%,rgba(249,70,21,.2) 92%,rgba(249,70,21,.38) 96%,rgba(249,70,21,0) 99%) no-repeat 0 0/0% 100%;animation:mark .8s cubic-bezier(.3,.7,.3,1) .35s forwards}
-.ab p:nth-child(2) mark{animation-delay:.55s}.ab p:nth-child(3) mark{animation-delay:.75s}.ab p:nth-child(4) mark{animation-delay:.95s}
+mark{color:inherit;padding:.04em .2em;margin:0 -.2em;border-radius:.35em .85em .4em .75em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:linear-gradient(104deg,rgba(249,70,21,0) .9%,rgba(249,70,21,.42) 2.4%,rgba(249,70,21,.28) 6%,rgba(249,70,21,.2) 92%,rgba(249,70,21,.38) 96%,rgba(249,70,21,0) 99%) no-repeat 0 0/0% 100%}
+mark.in{animation:mark .8s cubic-bezier(.3,.7,.3,1) .25s forwards}
 @keyframes mark{to{background-size:100% 100%}}
 @media (prefers-reduced-motion:reduce){mark{background-size:100% 100%}}
 .spark{display:inline-block;width:.62em;height:.62em;margin:0 .06em 0 .16em;vertical-align:.02em;animation:spin 14s linear infinite}
@@ -200,6 +200,8 @@ h1:hover .spark{animation-duration:2.5s}
 .prof i{margin-top:auto;font-family:var(--mono);font-size:.72rem;font-style:normal;color:var(--slate)}
 @media (max-width:600px){.prof{grid-template-columns:1fr}}
 .ab{max-width:64ch}
+/* photo and summary side by side on wider screens */
+@media (min-width:760px){.abh{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:56px;align-items:center;margin:60px 0 48px}.abh .ph{width:auto;margin:0}.abh .sum{margin:0;font-size:clamp(1.5rem,2.4vw,2rem)}}
 .ab p{max-width:none}
 .decs{display:grid;gap:14px}
 .dec{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--card)}
@@ -277,12 +279,12 @@ dec:[["Only what the old portal already did.","Adding new features on the way","
 ["Our internal team’s view moved to our internal tools.","One portal serving two audiences","Our operations team needed a different menu and different screens. Moving that view out also removed a decision we didn’t need to make."]],
 hout:"Live two days before the deadline",
 out:"Partners told their account managers what was missing, and I fixed most of it in code that same day. The old tool was switched off the next day. From my first line of code to production took <strong>under a month</strong>.",
-href:"What launch day taught me",
-ref:"On launch day, one screen left out some brokers. The new screen pulled data in a way the old one never had. That’s when I learned that moving a screen also means moving where its data comes from. Now, before any release, I check every change it carries and stop if one isn’t mine."},
+href:"The shortest path from feedback to fix",
+ref:"Building, not just designing, changed how I work. On launch day, the gap between hearing a problem and fixing it shrank to hours, because the person listening could also change the code. There was a stumble too. Right after launch, a partner opened the sales screen and thousands of policies showed up without the broker’s name. My screen matched the old one, but it pulled that name from a different place in our system. For older sales, that place was blank. Now, when I move a screen, I check where every piece of data comes from, not just how it looks."},
 {id:"assist",title:"A tow truck customers can watch arrive",pv:"Live tracking in the app",
 meta:"Product designer · 2024",
 card:"Someone stuck on the road has one question: when does help arrive? Now they can watch it come.",
-intro:"Roadside assistance was the service our customers used most, and the most urgent one. Ours relied on phone queues and gave no sign of when help would come. When the company switched to an on-demand towing network, I redesigned the assistance experience in the app, from the request to watching the tow truck arrive. It was my first project at the company.",
+intro:"Roadside assistance was the service our customers used most, and the most urgent one. Ours relied on phone queues and gave no sign of when help would come. When the company switched to an on-demand towing network, I redesigned the assistance experience in the app, from the request to watching the tow truck arrive. It was my first project in insurance.",
 stats:[["5","of customers used roadside assistance each month, against 1.8% who filed a claim"],["70","of requests went through the phone, where we couldn’t see what was sent"]],
 quote:"Someone stuck on the side of the road has one question: when does help arrive?",
 hctx:"Waiting on the roadside without a word",
@@ -300,7 +302,7 @@ dec:[["Three non-negotiable criteria: easy to request, always visible, no surpri
 hout:"Help you can watch arrive",
 out:"The new provider took over roadside assistance, and customers could follow the tow truck live in the app, from the estimated arrival to the provider’s name. Before the switch, the proof of concept had estimated savings of about 17% on assistance costs.",
 href:"Design for the worst moment of someone’s day",
-ref:"This was my first project at the company, and it taught me the product from the inside: assistance, operations and what a customer feels at the worst moment of their day. In an urgent flow, the most useful thing an interface can give is certainty about what happens next."},
+ref:"This was my first project in insurance, and it taught me the business from the inside: assistance, operations and what a customer feels at the worst moment of their day. In an urgent flow, the most useful thing an interface can give is certainty about what happens next."},
 {id:"account",title:"Putting the power to negotiate in the broker’s hands",pv:"57% of brokers applied a discount",
 meta:"Product owner and designer · 2026",
 card:"At the big insurers, brokers are used to having room to negotiate. I brought that to our portal: a balance they earn by selling and spend as a discount, on the spot, without asking anyone.",
@@ -353,8 +355,8 @@ stats:[["75","of first messages ask to book a call"],["20","of new brokers never
 quote:"The first message they got wasn’t a welcome. It was a request for a meeting.",
 hctx:"Brokers signed up and then went quiet",
 ctx:"The company wanted more brokers who actually sell. Welcoming them was done by hand, and one person could properly look after only about half of each month’s newcomers. The internal guide promised a first contact within a day. In practice, it took almost a week. So the question was simple: where do new brokers get stuck?",
-hrole:"Co-owner of the research",
-role:"I co-led the research with a product manager. I mapped the journey, read conversations and checked each step with the people who run it.",
+hrole:"Co-lead of the research, owner of the maps",
+role:"I co-led the research with a product manager and owned the maps: the official flow, the real one and a service blueprint with six stages, from sign-up to an active business. Every gap went to the people who do the work. The operations lead who approves registrations showed me which checks run on their own and which are done by hand. The account manager who welcomes new brokers explained what happens when someone goes quiet: three tries, then the broker is moved to general support, all by hand. I also sat in on the weekly training for new brokers to hear their first questions firsthand. I put the time the guide promises for each stage next to what we actually saw. Finally, I pulled anonymous quotes from brokers so the team could hear them in their own words.",
 happ:"Reading everything, not just the highlights",
 app:"We started with the official version of how onboarding was supposed to work. Then a few of us read all 640 conversations from start to finish, the way you read a story, instead of searching them for keywords. Voice messages were transcribed locally, so personal data never left our machines. Then we put the guide and reality side by side.",
 hdec:"Read everything before proposing anything",
@@ -364,8 +366,8 @@ dec:[["Read everything, not a sample.","Searching the conversations by keyword",
 ["Understand first, fix later.","Proposing a fix for every pain point","Jumping to solutions would have locked us into the first problem we saw. This phase was only about understanding."]],
 hout:"What the guide didn’t predict",
 out:"We mapped six stages, from first contact to an active business, with the official guide and reality side by side. Three in four ‘welcome’ messages were really requests to book a call. One in five new brokers never replied at all. Setting up their quoting tool took weeks without help, against two days in the guide. And the step everyone worried about, approval, almost never came up as a complaint.",
-href:"Data shows what, not why",
-ref:"The conversations showed what brokers asked and where they stopped. They didn’t show why, or how it feels to be left waiting. That only comes from talking to them. Before redesigning anything, I’d sit down with newly approved brokers and just listen."},
+href:"The real process lives in the conversations",
+ref:"Everyone was worried about approval. The conversations barely mentioned it. The real friction was where nobody was looking: a welcome that asked for a meeting, a quoting tool that took weeks to set up alone, brokers who simply never replied. The official guide described the process the company meant to run. The conversations showed the one brokers actually lived. Now, before trusting any process map, I look for the traces people leave while going through it. Those traces have limits, though: they show what happened, not why or how it felt. That part only comes from sitting down with newly approved brokers, one on one, and listening."},
 {id:"itau",title:"Helping Itaú prevent debt instead of chasing it",pv:"4 credit profiles, one preventive strategy",
 meta:"UX research and strategy · Service design consulting · 2022",
 card:"Itaú’s recovery area wanted to step in before customers fell into long debt. My research found four ways people relate to credit and helped turn ‘prevention’ from a vague goal into guidelines for every stage of the credit cycle.",
@@ -392,7 +394,7 @@ ref:"The research was the easy part. The hard part was getting a whole area to a
 meta:"UX research and strategy · Product strategy consulting at Thoughtworks",
 card:"Nestlé Brazil ran its brands’ sites and digital products on separate strategies. I worked on the research and strategy to unify them and owned the five-year product roadmap. The program later unified the brands’ campaign sites on a single platform.",
 intro:"Nestlé Brazil ran its brands, platforms and digital products on separate strategies. The consumer met a different experience on each site, and data was hard to collect and connect. I worked on UX research and strategy for one unified ecosystem and owned its five-year roadmap.",
-quote:"",
+quote:"To the consumer, it was all Nestlé. To Nestlé, it was five separate sites.",
 hctx:"Traffic that never became data",
 ctx:"Each brand ran its own campaign sites and digital products. Sites with similar purposes followed separate strategies, so the experience changed from one to the next and most visits never became usable data. At the same time, Nestlé had publicly committed to building first-party consumer data at scale. In 2021 it set out to double its consumer data records in four years, just as third-party cookies were being phased out.",
 hrole:"UX research and strategy",
@@ -412,7 +414,7 @@ ref:"The visible problem was too many sites. The real one was that each site col
 meta:"UX research and strategy · UX consulting",
 card:"Nobody at Santander Esfera could see the full path from finding a reward to paying for it. I reconstructed it screen by screen, edge cases included, and showed where it broke.",
 intro:"Esfera is Santander’s loyalty program. Cardholders buy points, browse a catalog and redeem them for products and vouchers, or use them with partners. The business had no clear view of how the real experience compared with the intended one. My research rebuilt the real flow, showed where it broke and gave the team a way to keep improving it.",
-quote:"",
+quote:"Everyone knew their own screen. Nobody knew the whole path.",
 hctx:"A blind spot between the screens",
 ctx:"This was one of several long engagements meant to grow the client’s product and design maturity over time. Esfera had a blind spot. Nobody could see the full path from searching for a reward to choosing how to pay and finishing the purchase, so nobody knew where people got stuck.",
 hrole:"UX research and strategy",
@@ -471,12 +473,12 @@ dec:[["Só o que o portal antigo já fazia.","Aproveitar pra lançar coisa nova"
 ["A visão do time interno foi pras ferramentas internas.","Um portal atendendo dois públicos","Nosso time de operação precisava de outro menu, com outras telas. Tirar essa visão também tirou uma decisão que a gente não precisava tomar."]],
 hout:"No ar dois dias antes do prazo",
 out:"As assessorias contaram aos gerentes de conta o que estava faltando. Corrigi a maior parte no código no mesmo dia. A ferramenta antiga foi desligada no dia seguinte. Da minha primeira linha de código até a produção, foi <strong>menos de um mês</strong>.",
-href:"O que o dia do lançamento me ensinou",
-ref:"No dia do lançamento, uma tela deixou alguns corretores de fora. A tela nova buscava os dados de um jeito que a antiga nunca tinha buscado. Ali aprendi que mudar uma tela de lugar também é mudar de onde vem o dado dela. Hoje, antes de qualquer publicação, confiro cada mudança que vai junto e paro se alguma não for minha."},
+href:"O caminho mais curto entre ouvir e resolver",
+ref:"Construir, e não só desenhar, mudou meu jeito de trabalhar. No dia do lançamento, a distância entre ouvir um problema e resolver encolheu pra horas, porque quem ouvia também podia mexer no código. Também teve tropeço. Logo depois do lançamento, uma assessoria abriu a tela de vendas e milhares de apólices apareceram sem o nome do corretor. Minha tela era igual à antiga, mas buscava esse nome num outro lugar do sistema. Nas vendas antigas, esse lugar estava em branco. Hoje, quando mudo uma tela de lugar, confiro de onde vem cada dado, não só como ela fica."},
 assist:{title:"Um guincho que o cliente vê chegando",pv:"Rastreamento ao vivo no app",
 meta:"Product designer · 2024",
 card:"Quem está parado na estrada tem uma pergunta só: quando a ajuda chega? Agora dá pra ver ela chegando.",
-intro:"A assistência 24h era o serviço que nossos clientes mais usavam e o mais urgente. A que a gente tinha dependia de fila no telefone e não dava nenhum sinal de quando a ajuda ia chegar. Quando a empresa trocou pra uma rede de guinchos sob demanda, redesenhei a experiência de assistência no app, do pedido até ver o guincho chegando. Foi meu primeiro projeto na empresa.",
+intro:"A assistência 24h era o serviço que nossos clientes mais usavam e o mais urgente. A que a gente tinha dependia de fila no telefone e não dava nenhum sinal de quando a ajuda ia chegar. Quando a empresa trocou pra uma rede de guinchos sob demanda, redesenhei a experiência de assistência no app, do pedido até ver o guincho chegando. Foi meu primeiro projeto em seguros.",
 sc:["dos clientes usavam assistência por mês, contra 1,8% que abriram sinistro","dos pedidos passavam pelo telefone, sem a gente ver o que era enviado"],
 quote:"Quem está parado na estrada tem uma pergunta só: quando a ajuda chega?",
 hctx:"Esperando na estrada sem notícia",
@@ -494,7 +496,7 @@ dec:[["Três critérios inegociáveis: fácil de pedir, sempre visível, sem sur
 hout:"Ajuda que dá pra ver chegando",
 out:"O novo fornecedor assumiu a assistência 24h. O cliente passou a acompanhar o guincho ao vivo no app, da previsão de chegada ao nome do prestador. Antes da troca, a prova de conceito tinha estimado uma economia de cerca de 17% nos custos de assistência.",
 href:"Desenhar pro pior momento do dia de alguém",
-ref:"Foi meu primeiro projeto na empresa e foi onde aprendi o produto por dentro: assistência, operação e o que o cliente sente no pior momento do dia. Num fluxo urgente, o mais útil que uma interface pode dar é a certeza do que vem a seguir."},
+ref:"Foi meu primeiro projeto em seguros e foi onde aprendi o negócio por dentro: assistência, operação e o que o cliente sente no pior momento do dia. Num fluxo urgente, o mais útil que uma interface pode dar é a certeza do que vem a seguir."},
 account:{title:"O poder de negociar na mão do corretor",pv:"57% dos corretores aplicaram desconto",
 meta:"Dona do produto e designer · 2026",
 card:"Nas grandes seguradoras, o corretor está acostumado a ter margem pra negociar. Trouxe isso pro nosso portal: um saldo que ele ganha vendendo e usa como desconto na hora, sem pedir pra ninguém.",
@@ -547,8 +549,8 @@ sc:["das primeiras mensagens pedem pra marcar uma ligação","dos corretores nov
 quote:"A primeira mensagem que eles recebiam não era boas-vindas. Era um pedido de reunião.",
 hctx:"Os corretores se cadastravam e depois sumiam",
 ctx:"A empresa queria mais corretores vendendo de verdade. O acolhimento era manual. Uma pessoa só dava conta de cuidar bem de mais ou menos metade dos novatos de cada mês. O guia interno prometia o primeiro contato em um dia. Na prática, levava quase uma semana. A pergunta era simples: onde o corretor novo trava?",
-hrole:"Co-dona da pesquisa",
-role:"Co-liderei a pesquisa com um gerente de produto. Mapeei a jornada, li conversas e conferi cada etapa com quem opera.",
+hrole:"Co-líder da pesquisa e dona dos mapas",
+role:"Co-liderei a pesquisa com um gerente de produto e fiquei com os mapas: o fluxo oficial, o real e um blueprint de serviço com seis etapas, do cadastro à carteira ativa. Toda lacuna ia pra quem faz o trabalho. Quem lidera a aprovação dos cadastros me mostrou quais checagens rodam sozinhas e quais são feitas na mão. Quem faz o acolhimento dos corretores novos explicou o que acontece quando alguém some: três tentativas e depois o corretor vai pra central de atendimento, tudo manual. Também participei dos treinamentos semanais de corretores pra ouvir de perto as primeiras dúvidas dos novatos. Coloquei o tempo que o guia promete pra cada etapa ao lado do que a gente viu de verdade. Por fim, separei falas anônimas de corretores pro time ouvir com as palavras deles.",
 happ:"Ler tudo, não só os destaques",
 app:"Começamos pela versão oficial de como o acolhimento deveria funcionar. Depois, um grupo pequeno leu as 640 conversas do começo ao fim, como quem lê uma história, em vez de buscar palavra-chave. Os áudios foram transcritos localmente, pra nenhum dado pessoal sair das nossas máquinas. Aí colocamos o guia e a realidade lado a lado.",
 hdec:"Ler tudo antes de propor qualquer coisa",
@@ -558,8 +560,8 @@ dec:[["Ler tudo, não uma amostra.","Buscar as conversas por palavra-chave","Pal
 ["Entender primeiro, resolver depois.","Propor uma correção pra cada dor","Correr pra solução ia prender a gente no primeiro problema que aparecesse. Essa fase era só pra entender."]],
 hout:"O que o guia não previa",
 out:"Mapeamos seis etapas, do primeiro contato à carteira ativa, com o guia oficial e a realidade lado a lado. Três em cada quatro mensagens de ‘boas-vindas’ eram pedidos pra marcar uma ligação. Um em cada cinco corretores novos nunca respondeu. Configurar a ferramenta de cotação levava semanas sem ajuda, contra dois dias no guia. E a etapa que preocupava todo mundo, a aprovação, quase nunca aparecia como reclamação.",
-href:"O dado mostra o quê, não o porquê",
-ref:"As conversas mostraram o que o corretor perguntava e onde ele parava. Não mostraram o porquê, nem como é ficar esperando. Isso só aparece conversando com ele. Antes de redesenhar qualquer coisa, eu sentaria com corretores recém-aprovados só pra ouvir."},
+href:"O processo de verdade mora nas conversas",
+ref:"Todo mundo se preocupava com a aprovação. As conversas quase não falavam dela. O atrito de verdade estava onde ninguém olhava: uma boas-vindas que pedia reunião, uma ferramenta de cotação que levava semanas pra configurar sozinho, corretores que simplesmente nunca respondiam. O guia oficial descrevia o processo que a empresa queria ter. As conversas mostravam o que o corretor vivia de fato. Hoje, antes de confiar num mapa de processo, procuro os rastros que as pessoas deixam enquanto passam por ele. Só que esses rastros têm limite: mostram o que aconteceu, não o porquê nem como foi. Essa parte só vem sentando com corretores recém-aprovados, um a um, pra ouvir."},
 itau:{title:"Ajudar o Itaú a prevenir a dívida em vez de cobrar",pv:"4 perfis de crédito, uma estratégia preventiva",
 meta:"Pesquisa de UX e estratégia · Consultoria de service design · 2022",
 card:"A área de recuperação do Itaú queria agir antes de o cliente cair numa dívida longa. Minha pesquisa encontrou quatro jeitos de lidar com crédito. Ela ajudou a transformar ‘preventivo’ de uma meta vaga em diretrizes pra cada etapa do ciclo de crédito.",
@@ -588,7 +590,7 @@ meta:"Pesquisa de UX e estratégia · Consultoria de estratégia de produto na T
 card:"A Nestlé Brasil mantinha os sites e produtos digitais das marcas com estratégias separadas. Trabalhei na pesquisa e na estratégia pra unificar tudo e fui dona do roadmap de cinco anos. Depois, o programa unificou os sites de campanha das marcas numa plataforma só.",
 intro:"A Nestlé Brasil mantinha marcas, plataformas e produtos digitais com estratégias separadas. O consumidor encontrava uma experiência diferente em cada site. O dado era difícil de coletar e de conectar. Trabalhei com pesquisa de UX e estratégia num ecossistema único e fui dona do roadmap de cinco anos.",
 sc:[],
-quote:"",
+quote:"Pro consumidor, era tudo Nestlé. Pra Nestlé, eram cinco sites separados.",
 hctx:"Tráfego que nunca virava dado",
 ctx:"Cada marca tinha os próprios sites de campanha e produtos digitais. Sites com propósitos parecidos seguiam estratégias separadas, então a experiência mudava de um pro outro. A maior parte das visitas nunca virava dado útil. Ao mesmo tempo, a Nestlé tinha assumido em público o compromisso de construir dados próprios em escala. Em 2021, ela se propôs a dobrar sua base de dados de consumidores em quatro anos, bem quando os cookies de terceiros estavam saindo de cena.",
 hrole:"Pesquisa de UX e estratégia",
@@ -609,7 +611,7 @@ meta:"Pesquisa de UX e estratégia · Consultoria de UX",
 card:"Ninguém no Santander Esfera conseguia ver o caminho completo entre achar uma recompensa e pagar por ela. Reconstruí esse caminho tela por tela, com os casos de borda. Depois mostrei onde ele quebrava.",
 intro:"O Esfera é o programa de fidelidade do Santander. Quem tem o cartão compra pontos, navega num catálogo e resgata por produtos e vouchers, ou usa os pontos em parceiros. O negócio não conseguia ver como a experiência real se comparava com a planejada. Minha pesquisa reconstruiu o fluxo real, mostrou onde ele quebrava e deu ao time um jeito de continuar melhorando.",
 sc:[],
-quote:"",
+quote:"Cada um conhecia a sua tela. Ninguém conhecia o caminho inteiro.",
 hctx:"Um ponto cego entre as telas",
 ctx:"Este foi um de vários trabalhos longos pra aumentar a maturidade de produto e design do cliente ao longo do tempo. O Esfera tinha um ponto cego. Ninguém conseguia ver o caminho completo entre buscar uma recompensa, escolher como pagar e concluir a compra. Então ninguém sabia onde as pessoas travavam.",
 hrole:"Pesquisa de UX e estratégia",
@@ -706,8 +708,8 @@ function about(L){
   const x=X[lang];
   const star='<svg class="star" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g2" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF9A6E"/><stop offset=".5" stop-color="#F94615"/><stop offset="1" stop-color="#C4300A"/></linearGradient></defs><path fill="url(#g2)" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"/></svg>';
   return `<p class="k">${x.ak}</p><h1>${x.ah}</h1>
-<figure class="ph">${star}<div class="frame"><img src="${PHOTO}" alt="${x.photoAlt}"></div></figure>
-<p class="sum">${x.asum}</p><div class="ab">${x.ap.map(t=>`<p>${t}</p>`).join("")}<p class="k">${x.born}</p></div>
+<div class="abh"><figure class="ph">${star}<div class="frame"><img src="${PHOTO}" alt="${x.photoAlt}"></div></figure>
+<p class="sum">${x.asum}</p></div><div class="ab">${x.ap.map(t=>`<p>${t}</p>`).join("")}<p class="k">${x.born}</p></div>
 <section class="sec"><h2 class="sh"><i>01</i>${x.prh}</h2>${x.pr.map(p=>`<details class="pr" name="pr"><summary>${p[0]}</summary><div class="in"><p>${p[1]}</p></div></details>`).join("")}</section>
 <section class="sec"><h2 class="sh"><i>02</i>${x.exh}</h2><div class="dom">${x.ex.map(e=>`<p><b>${e[0]}</b>${e[1]}</p>`).join("")}</div></section>
 <section class="sec"><h2 class="sh"><i>03</i>${x.sph}</h2><div class="spec">${x.sp.map(e=>`<div><b class="serif">${e[0]}</b><p>${e[1]}</p></div>`).join("")}</div></section>
@@ -728,6 +730,9 @@ function render(){
   window.scrollTo(0,0);reset();
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.6});
   app.querySelectorAll(".stat,.flow>div").forEach(s=>io.observe(s));
+  // highlighter marks draw in as each one scrolls into view
+  const mo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");mo.unobserve(e.target)}}),{threshold:.8,rootMargin:"0px 0px -12% 0px"});
+  app.querySelectorAll("mark").forEach(m=>mo.observe(m));
 }
 function go(id){
   const w=id==="work";
