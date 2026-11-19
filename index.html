@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lu Paes, senior product designer</title>
-<meta name="description" content="Senior product designer working on insurance and fintech products for brokers and customers.">
+<title>Lu Paes, senior product designer for internal tools and insurance</title>
+<meta name="description" content="Senior product designer for internal tools, complex workflows and insurance products. UX research, UX/UI in Figma and design systems, built side by side with engineers.">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -87,8 +87,10 @@ mark.in{animation:mk .9s cubic-bezier(.3,.7,.3,1) .2s forwards}
 
 /* featured work: one picture per case, caption beneath */
 .rows{list-style:none;margin:0;padding:0}
-.feat{display:grid;gap:clamp(72px,9vw,120px)}
-.feat a{display:grid;gap:14px}
+#work{display:block}
+#work>.sh{margin:0 0 clamp(28px,4vw,48px)}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(64px,8vw,104px) clamp(32px,6vw,96px)}
+.feat a{display:grid;gap:12px;align-content:start}
 .cover{display:block;background:var(--frame)}
 .cover svg{display:block;width:100%;height:auto}
 .cover .f{fill:var(--ink)}
@@ -96,8 +98,9 @@ mark.in{animation:mk .9s cubic-bezier(.3,.7,.3,1) .2s forwards}
 .cover .d{stroke-dasharray:2 7;stroke-linecap:round;stroke-width:1.6}
 .feat li{display:grid}
 .feat small{order:2;margin-top:6px}
-.feat .t{order:3;display:block;font:500 clamp(1.15rem,2.2vw,1.45rem)/1.25 var(--grot);letter-spacing:-.015em}
-.feat .d{order:4;display:block;color:var(--graphite);max-width:56ch}
+.feat .t{order:3;display:block;margin-top:10px;font:500 clamp(1.05rem,1.7vw,1.3rem)/1.25 var(--grot);letter-spacing:-.015em;text-wrap:balance}
+.feat a:hover .t{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.feat .d{order:4;display:block;color:var(--graphite);max-width:46ch}
 .feat .r{order:5;display:block;font-size:.85rem;color:var(--ink)}
 .feat .r::before{content:"→ "}
 .mini{border-top:1px solid var(--line)}
@@ -181,7 +184,7 @@ footer b{font-weight:400;color:var(--graphite)}
   .hero,.sec,.cs{grid-template-columns:1fr}
   .hero>*,.sec>*,.cs>*,.hero>.k,.sec>.sh,.cs>.cl{grid-column:1;grid-row:auto}
   .sec>.sh,.cs>.cl{margin-bottom:22px}
-  .kit,.hlp,.prof{grid-template-columns:1fr}
+  .kit,.hlp,.prof,.feat{grid-template-columns:1fr}
   .abh{grid-template-columns:88px minmax(0,1fr)}
   .lang{position:static;justify-self:end}
   .mini a{grid-template-columns:1fr;gap:6px}
@@ -250,7 +253,7 @@ href:"Design the work, not just the screen",
 ref:"The problem looked like a slow screen. It was really a workflow scattered across Slack, threads and people’s memory. Once the work was organized by who acts next, the screen almost designed itself. With internal tools, I start by mapping how work moves from one person to the next. The interface comes after. And when a model learns from that screen, every check needs a clear answer, because the model only learns what the screen asks people to decide."},
 {id:"renewal",title:"One-click renewals that kept half the policies",pv:"50.9% of policies renewed",
 meta:"Only designer",
-card:"By law, a renewal is a new contract, so someone has to say yes. Busy brokers left it for the last two weeks and happy customers walked away. I made the system prepare each offer so the broker only has to click. Half the drivers stayed.",
+card:"A busy broker now renews a driver’s policy in one click, before it expires.",
 intro:"Every year, car insurance has to be renewed, and in Brazil it’s usually a broker, an independent adviser, who does it for the driver. When our first annual policies were about to expire, each renewal depended on a busy broker remembering it in time. If they forgot, the driver was left uninsured. I redesigned renewal so the broker only has to say yes.",
 stats:[["50.9","renewal rate in the first months"],["96.5","of proposals sent became policies"]],
 quote:"Renewal can’t be automatic. So it had to be effortless.",
@@ -272,7 +275,7 @@ href:"Look for the problem before the screen",
 ref:"I spent weeks making the final click effortless. Then the numbers surprised me: almost everyone who reaches that click renews. The real loss happens earlier, in the days when nobody has even looked. Now, before polishing the step I’m proudest of, I ask where people actually give up. That question became our next project: renewals a broker sets up once and the system sends on time."},
 {id:"assessorias",title:"A portal rebuilt in a month, with my first code",pv:"Live before the contract ended",
 meta:"Product owner, designer and developer",
-card:"Advisory firms open this portal every month to see what their brokers sold and how much they will earn. The tool behind it had a contract about to end. I redesigned it and wrote part of the code, my first ever, with engineers reviewing every change. It went live two days before the deadline.",
+card:"Advisory firms didn’t go a single day without seeing what their brokers sell and earn.",
 intro:"Many brokers work under advisory firms, companies that support a network of brokers and get paid for what that network sells. Every month, those firms open our portal to see who sold what and how much they will earn. The tool behind that portal had a contract about to end, and nothing would replace it unless we built it. I redesigned the portal and, for the first time in my life, wrote part of its code, vibe coding with an AI assistant while engineers reviewed every change. <strong>It went live two days before the contract ended.</strong>",
 quote:"I had never written code. The deadline didn’t care.",
 hctx:"A fixed deadline and nothing underneath",
@@ -292,7 +295,7 @@ href:"The shortest path from feedback to fix",
 ref:"Building, not just designing, changed how I work. On launch day, the gap between hearing a problem and fixing it shrank to hours, because the person listening could also change the code. There was a stumble too. Right after launch, a partner opened the sales screen and thousands of policies showed up without the broker’s name. My screen matched the old one, but it pulled that name from a different place in our system. For older sales, that place was blank. Now, when I move a screen, I check where every piece of data comes from, not just how it looks."},
 {id:"assist",title:"A tow truck customers can watch arrive",pv:"Live tracking in the app",
 meta:"Product designer",
-card:"Someone stuck on the road has one question: when does help arrive? Our roadside assistance ran on phone queues and couldn’t answer it. When we switched to an on-demand towing network, I redesigned the request in the app. Now an open request takes over the home screen, with the arrival time and the tow truck live on the map.",
+card:"Someone stuck on the road can now watch the tow truck arrive in the app.",
 intro:"Roadside assistance was the service our customers used most, and the most urgent one. Ours relied on phone queues and gave no sign of when help would come. When the company switched to an on-demand towing network, I redesigned the assistance experience in the app, from the request to watching the tow truck arrive. It was my first project in insurance.",
 stats:[["5","of customers used roadside assistance each month, against 1.8% who filed a claim"],["70","of requests went through the phone, where we couldn’t see what was sent"]],
 quote:"Someone stuck on the side of the road has one question: when does help arrive?",
@@ -337,7 +340,7 @@ href:"The people using it know things a document can’t",
 ref:"I said no to an earlier discount twice, both times with great arguments. Brokers kept repeating the same thing: they need it when the customer hesitates, not at the end. When I finally listened, the redesign took three days. Good arguments matter. But the people who use a product every day know things no document will ever tell you."},
 {id:"annual",title:"The annual policy that grew to 89% of new sales",pv:"89% of new sales are annual",
 meta:"Product designer",
-card:"We sold insurance like a gym membership: month to month, easy to quit. The big insurers sell one-year policies, and that’s what brokers live on. I designed the launch that put us in that game. Sixteen months later, annual was 89% of new sales.",
+card:"Brokers can now sell with us the yearly policy their business is built on.",
 intro:"In Brazilian car insurance, the big players sell one-year policies. That’s what brokers sell every day, renew every year and build their business on. We only had a monthly plan, so for most brokers we were a niche option. The annual policy changed the league we played in. I designed its launch across the broker portal, the customer app and our internal tools.",
 stats:[["15","of new sales at launch"],["89","of new sales 16 months later"]],
 quote:"With the annual policy, we stopped being the alternative and started playing in the big leagues.",
@@ -482,7 +485,7 @@ href:"Desenhar o trabalho, não só a tela",
 ref:"O problema parecia uma tela lenta. Na verdade era um fluxo espalhado entre Slack, threads e a memória das pessoas. Quando o trabalho ficou organizado por quem age a seguir, a tela quase se desenhou sozinha. Em ferramenta interna, começo mapeando como o trabalho passa de uma pessoa pra outra. A interface vem depois. E quando um modelo aprende com essa tela, cada conferência precisa de uma resposta clara, porque ele só aprende o que a tela pede pra pessoa decidir."},
 renewal:{title:"Renovação em um clique que manteve metade das apólices",pv:"50,9% das apólices renovadas",
 meta:"Única designer",
-card:"Por lei, renovar é assinar um contrato novo, então alguém precisa dizer sim. O corretor ocupado deixava pras últimas duas semanas e cliente satisfeito ia embora. Fiz o sistema preparar cada oferta pro corretor só clicar. Metade dos motoristas ficou.",
+card:"O corretor ocupado agora renova a apólice do motorista em um clique, antes de vencer.",
 intro:"Todo ano o seguro do carro precisa ser renovado. No Brasil, quem costuma fazer isso pelo motorista é o corretor, um consultor independente. Quando nossas primeiras apólices anuais estavam pra vencer, cada renovação dependia de um corretor ocupado lembrar a tempo. Se ele esquecesse, o motorista ficava sem seguro. Redesenhei a renovação pro corretor só precisar dizer sim.",
 sc:["taxa de renovação nos primeiros meses","das propostas enviadas viraram apólice"],
 quote:"A renovação não pode ser automática. Então precisava ser fácil.",
@@ -504,7 +507,7 @@ href:"Procurar o problema antes da tela",
 ref:"Passei semanas deixando o último clique perfeito. Aí os números me surpreenderam: quase todo mundo que chega nesse clique renova. A perda de verdade acontece antes, nos dias em que ninguém nem olhou. Hoje, antes de polir a etapa de que mais me orgulho, pergunto onde as pessoas realmente desistem. Essa pergunta virou nosso projeto seguinte: renovações que o corretor configura uma vez e o sistema manda na hora certa."},
 assessorias:{title:"Um portal refeito em um mês, com meu primeiro código",pv:"No ar antes do fim do contrato",
 meta:"Dona do produto, designer e dev",
-card:"As assessorias abrem esse portal todo mês pra ver o que os corretores delas venderam e quanto vão ganhar. O contrato da ferramenta por trás estava pra acabar. Redesenhei o portal e escrevi parte do código, o primeiro da minha vida, com os engenheiros revisando cada mudança. Entrou no ar dois dias antes do prazo.",
+card:"As assessorias não ficaram um dia sem ver o que os corretores delas vendem e quanto vão ganhar.",
 intro:"Muitos corretores trabalham ligados a assessorias, empresas que apoiam uma rede de corretores e ganham pelo que essa rede vende. Todo mês, as assessorias entram no nosso portal pra ver quem vendeu o quê e quanto vão receber. A ferramenta por trás desse portal estava com o contrato acabando. Se a gente não construísse um substituto, elas ficariam sem nada. Redesenhei o portal e, pela primeira vez na vida, escrevi parte do código. Fiz isso com vibe coding, usando um assistente de IA, enquanto os engenheiros revisavam cada mudança. <strong>Ele entrou no ar dois dias antes do fim do contrato.</strong>",
 sc:[],
 quote:"Eu nunca tinha programado. O prazo não quis saber.",
@@ -525,7 +528,7 @@ href:"O caminho mais curto entre ouvir e resolver",
 ref:"Construir, e não só desenhar, mudou meu jeito de trabalhar. No dia do lançamento, a distância entre ouvir um problema e resolver encolheu pra horas, porque quem ouvia também podia mexer no código. Também teve tropeço. Logo depois do lançamento, uma assessoria abriu a tela de vendas e milhares de apólices apareceram sem o nome do corretor. Minha tela era igual à antiga, mas buscava esse nome num outro lugar do sistema. Nas vendas antigas, esse lugar estava em branco. Hoje, quando mudo uma tela de lugar, confiro de onde vem cada dado, não só como ela fica."},
 assist:{title:"Um guincho que o cliente vê chegando",pv:"Rastreamento ao vivo no app",
 meta:"Product designer",
-card:"Quem está parado na estrada tem uma pergunta só: quando a ajuda chega? Nossa assistência dependia de fila no telefone e não respondia isso. Quando trocamos pra uma rede de guinchos sob demanda, redesenhei o pedido no app. Agora um pedido aberto toma a home, com a previsão de chegada e o guincho ao vivo no mapa.",
+card:"Quem está parado na estrada agora vê o guincho chegando pelo app.",
 intro:"A assistência 24h era o serviço que nossos clientes mais usavam e o mais urgente. A que a gente tinha dependia de fila no telefone e não dava nenhum sinal de quando a ajuda ia chegar. Quando a empresa trocou pra uma rede de guinchos sob demanda, redesenhei a experiência de assistência no app, do pedido até ver o guincho chegando. Foi meu primeiro projeto em seguros.",
 sc:["dos clientes usavam assistência por mês, contra 1,8% que abriram sinistro","dos pedidos passavam pelo telefone, sem a gente ver o que era enviado"],
 quote:"Quem está parado na estrada tem uma pergunta só: quando a ajuda chega?",
@@ -570,7 +573,7 @@ href:"Quem usa sabe o que nenhum documento sabe",
 ref:"Disse não ao desconto mais cedo duas vezes, com ótimos argumentos. Os corretores repetiam a mesma coisa: eles precisam dele quando o cliente hesita, não no fim. Quando eu finalmente ouvi, o redesenho levou três dias. Argumento bom importa. Mas quem usa o produto todo dia sabe coisas que nenhum documento vai te contar."},
 annual:{title:"A apólice anual que chegou a 89% das vendas novas",pv:"89% das vendas novas são anuais",
 meta:"Product designer",
-card:"A gente vendia seguro como mensalidade de academia: mês a mês, fácil de largar. As grandes seguradoras vendem apólice de um ano. É disso que o corretor vive. Desenhei o lançamento que colocou a gente nesse jogo. Dezesseis meses depois, o anual era 89% das vendas novas.",
+card:"O corretor agora pode vender com a gente o seguro anual que sustenta o negócio dele.",
 intro:"No seguro de carro, os grandes vendem apólice de um ano. É isso que o corretor vende todo dia, renova todo ano e usa pra construir o negócio dele. A gente só tinha um plano mensal. Pra maioria dos corretores, éramos uma opção de nicho. A apólice anual mudou o campeonato em que a gente jogava. Desenhei esse lançamento no portal do corretor, no app do cliente e nas ferramentas internas.",
 sc:["das vendas novas no lançamento","das vendas novas 16 meses depois"],
 quote:"Com a apólice anual, a gente deixou de ser a alternativa e passou a jogar no campeonato dos grandes.",
@@ -686,12 +689,12 @@ kit:{"lead": "Sticky notes, code and a lot of conversations.", "g": [["Things I 
 more:"More about me",cta1:"Got a tricky product problem? I’m in.",cta2:"Open to senior product design roles and consulting.",
 ak:"Profile",ah:"About",
 asum:"Senior product designer <mark>who falls for messy problems</mark>, for the people living them and for the teams solving them.",
-ap:["I started in strategic design consulting, studying how people behave, how services work and how big organizations fit together. Today I’m a product designer. I do UX and UI work side by side with product teams, <mark>from a fuzzy problem all the way to something real in production</mark>.","I like to understand a problem before I make it pretty. That means spending time in regulations, business operations and the way things are built. In high-stakes areas like underwriting or partner platforms, a team has to explain its decisions, test them and defend them. <mark>I want mine to hold up</mark>.","<mark>Design and code don’t need a wall between them</mark>. Instead of handing over a static prototype and hoping it survives, I work inside the stack. With Claude Code, Git, Docker and VS Code I test state machines and real data models, so the time between an idea and a customer gets shorter.","I also bring mentoring experience. <mark>I’ve coached junior product managers</mark> on how to prioritize, structure their work and step back when a week gets hectic.","English is my working language. I collaborate with colleagues from Africa, Europe and North and South America."],
+ap:["I started in strategic design consulting, studying how people behave, how services work and how big organizations fit together. Today I’m a product designer. I do UX and UI work side by side with product teams, from a fuzzy problem all the way to something real in production.","I like to understand a problem before I make it pretty. That means spending time in regulations, business operations and the way things are built. In high-stakes areas like underwriting or partner platforms, a team has to explain its decisions, test them and defend them. I want mine to hold up.","Design and code don’t need a wall between them. Instead of handing over a static prototype and hoping it survives, I work inside the stack. With Claude Code, Git, Docker and VS Code I test state machines and real data models, so the time between an idea and a customer gets shorter.","I also bring mentoring experience. I’ve coached junior product managers on how to prioritize, structure their work and step back when a week gets hectic.","English is my working language. I collaborate with colleagues from Africa, Europe and North and South America."],
 born:"I was born in Belém, in the Brazilian Amazon. Today I live in São Paulo.",
 exh:"Experience & domains",
-ex:[["Insurance, from the inside","I design for brokers, drivers and the teams behind them. I turn dense insurance rules into flows brokers can sell and customers understand."],["Big brands, tangled journeys","Before insurance, I helped Nestlé, Itaú and Santander see their services the way customers do, with interviews, journeys and a lot of sticky notes."],["Rules are my playground","Regulation, risk limits and tax changes decide what a screen can say. I like that. A good constraint makes the design sharper."]],
+ex:[["Rules are my playground","In a regulated market, laws, risk limits and tax changes decide what a screen can say. I like that. A good constraint makes the design sharper."],["Internal tools and complex workflows","Back office, inspection queues, partner portals: tools people use all day. I design for the analyst with a long queue, not for the demo."],["Insurance, from the inside","I design for brokers, drivers and the teams behind them. I turn dense insurance rules into flows brokers can sell and customers understand."],["Big brands, tangled journeys","Before insurance, I helped Nestlé, Itaú and Santander see their services the way customers do, with interviews, journeys and a lot of sticky notes."]],
 sph:"Practice & capabilities",
-sp:[["UX research and discovery","Interviews, shadowing, reading real conversations, journey maps, service blueprints, jobs to be done and surveys. I organize what I learn before I open a layout."],["Product strategy","PRDs, priorities, trade-offs, roadmaps and success metrics, each with a clear definition."],["Product design","UX and UI for web and mobile: flows, states and edge cases, plus copy, prototypes, handoff and design QA."],["Build with engineers","Claude Code, Git, Docker, React and HTML/CSS, plus warehouse queries to test decisions. Engineers review what I write."]],
+sp:[["UX research and discovery","Interviews, shadowing, reading real conversations, journey maps, service blueprints, jobs to be done and surveys. I organize what I learn before I open a layout."],["Product strategy","PRDs, priorities, trade-offs, roadmaps and success metrics, each with a clear definition."],["Product design","UX and UI for web and mobile in Figma: flows, states and edge cases, plus copy, prototypes, handoff and design QA. I also built and maintain the back office design system, a component library for our internal tools."],["AI-assisted prototyping and code","Claude Code, Git, Docker, React and HTML/CSS, plus warehouse queries to test decisions. Engineers review what I write."]],
 aend:"Got a problem worth losing sleep over? Let’s talk.",
 ch1:"Let’s talk. Hard problems are my thing.",
 csub:"Tell me what you’re working on. I’m open to senior product design roles, consulting and early design partnerships.",
@@ -707,12 +710,12 @@ kit:{"lead": "Post-it, código e muita conversa.", "g": [["Artefatos que eu amo 
 more:"Mais sobre mim",cta1:"Tem um desafio de produto daqueles? Tô dentro.",cta2:"Aberta a vagas sênior de product design e consultorias.",
 ak:"Perfil",ah:"Sobre",
 asum:"Product designer sênior <mark>que se apaixona por problema bagunçado</mark>, pelas pessoas que vivem ele e pelos times que resolvem.",
-ap:["Comecei em consultoria estratégica de design, estudando como as pessoas se comportam, como os serviços funcionam e como as grandes empresas se organizam. Hoje sou product designer. Faço UX e UI junto com times de produto, <mark>de um problema ainda nebuloso até algo de verdade no ar</mark>.","Gosto de entender o problema antes de deixar bonito. Por isso passo tempo na regulação, na operação e em como as coisas são construídas. Em áreas de alto risco, como aceitação de seguros ou plataformas de parceiros, o time precisa explicar, testar e defender cada decisão. <mark>Quero que as minhas se sustentem</mark>.","<mark>Design e código não precisam de um muro no meio</mark>. Em vez de entregar um protótipo estático e torcer pra ele sobreviver, trabalho dentro do código. Com Claude Code, Git, Docker e VS Code, testo estados e dados reais. Assim, uma ideia chega mais rápido ao cliente.","Também tenho experiência como mentora. <mark>Já orientei PMs júnior</mark> em como priorizar, estruturar o trabalho e dar um passo atrás quando as coisas apertam.","Inglês é meu idioma de trabalho. Colaboro com colegas da África, da Europa e das Américas do Norte e do Sul."],
+ap:["Comecei em consultoria estratégica de design, estudando como as pessoas se comportam, como os serviços funcionam e como as grandes empresas se organizam. Hoje sou product designer. Faço UX e UI junto com times de produto, de um problema ainda nebuloso até algo de verdade no ar.","Gosto de entender o problema antes de deixar bonito. Por isso passo tempo na regulação, na operação e em como as coisas são construídas. Em áreas de alto risco, como aceitação de seguros ou plataformas de parceiros, o time precisa explicar, testar e defender cada decisão. Quero que as minhas se sustentem.","Design e código não precisam de um muro no meio. Em vez de entregar um protótipo estático e torcer pra ele sobreviver, trabalho dentro do código. Com Claude Code, Git, Docker e VS Code, testo estados e dados reais. Assim, uma ideia chega mais rápido ao cliente.","Também tenho experiência como mentora. Já orientei PMs júnior em como priorizar, estruturar o trabalho e dar um passo atrás quando as coisas apertam.","Inglês é meu idioma de trabalho. Colaboro com colegas da África, da Europa e das Américas do Norte e do Sul."],
 born:"Nasci em Belém, na Amazônia brasileira. Hoje moro em São Paulo.",
 exh:"Experiência e domínios",
-ex:[["Seguro, por dentro","Desenho pra corretores, motoristas e os times por trás deles. Transformo regras densas de seguro em fluxos que o corretor vende e o cliente entende."],["Marcas grandes, jornadas emboladas","Antes do seguro, ajudei Nestlé, Itaú e Santander a enxergar os próprios serviços do jeito que o cliente enxerga, com entrevistas, jornadas e muito post-it."],["Regra é meu playground","Regulação, limite de risco e mudança de imposto decidem o que uma tela pode dizer. Eu gosto disso. Uma boa restrição deixa o design mais afiado."]],
+ex:[["Regra é meu playground","Em mercado regulado, a lei, o limite de risco e a mudança de imposto decidem o que uma tela pode dizer. Eu gosto disso. Uma boa restrição deixa o design mais afiado."],["Ferramentas internas e fluxos complexos","Backoffice, filas de vistoria, portais de parceiros: ferramentas que as pessoas usam o dia inteiro. Desenho pro analista com uma fila longa, não pra demo."],["Seguro, por dentro","Desenho pra corretores, motoristas e os times por trás deles. Transformo regras densas de seguro em fluxos que o corretor vende e o cliente entende."],["Marcas grandes, jornadas emboladas","Antes do seguro, ajudei Nestlé, Itaú e Santander a enxergar os próprios serviços do jeito que o cliente enxerga, com entrevistas, jornadas e muito post-it."]],
 sph:"Prática e capacidades",
-sp:[["Pesquisa de UX e descoberta","Entrevistas, acompanhamento de operação, leitura de conversas reais, mapas de jornada, blueprints de serviço, jobs to be done e pesquisas. Organizo o que aprendo antes de abrir um layout."],["Estratégia de produto","PRDs, prioridades, trade-offs, roadmaps e métricas de sucesso, cada uma com uma definição clara."],["Product design","UX e UI pra web e mobile: fluxos, estados e casos de borda, além de textos, protótipos, handoff e QA de design."],["Construir com engenheiros","Claude Code, Git, Docker, React e HTML/CSS, além de consultas ao data warehouse pra testar decisões. Os engenheiros revisam o que escrevo."]],
+sp:[["Pesquisa de UX e descoberta","Entrevistas, acompanhamento de operação, leitura de conversas reais, mapas de jornada, blueprints de serviço, jobs to be done e pesquisas. Organizo o que aprendo antes de abrir um layout."],["Estratégia de produto","PRDs, prioridades, trade-offs, roadmaps e métricas de sucesso, cada uma com uma definição clara."],["Product design","UX e UI pra web e mobile no Figma: fluxos, estados e casos de borda, além de textos, protótipos, handoff e QA de design. Também criei e mantenho o design system do backoffice, uma biblioteca de componentes pras nossas ferramentas internas."],["Protótipo e código com IA","Claude Code, Git, Docker, React e HTML/CSS, além de consultas ao data warehouse pra testar decisões. Os engenheiros revisam o que escrevo."]],
 aend:"Tem um problema que tira o sono? Bora conversar.",
 ch1:"Bora conversar. Problema difícil é a minha praia.",
 csub:"Me conta no que você está trabalhando. Estou aberta a vagas sênior de product design, consultorias e parcerias de design desde o começo.",
@@ -727,8 +730,9 @@ const KICK={en:"Senior product designer · São Paulo, Brasil",pt:"Product desig
 const COV={
 renewal:`<svg viewBox="0 0 640 400"><circle class="s" cx="320" cy="200" r="96"/><path class="f" d="M320,104 A96,96 0 0,0 320,296 Z"/></svg>`,
 assessorias:`<svg viewBox="0 0 640 400">${Array.from({length:30},(_,i)=>`<circle class="f" cx="${158+(i%10)*36}" cy="${164+Math.floor(i/10)*36}" r="4.5"/>`).join("")}<circle class="s" cx="482" cy="236" r="12"/></svg>`,
+annual:`<svg viewBox="0 0 640 400"><circle class="s" cx="320" cy="200" r="96"/>${Array.from({length:12},(_,i)=>{const a=i*Math.PI/6-Math.PI/2;return `<circle class="${i<11?"s":"f"}" cx="${(320+96*Math.cos(a)).toFixed(1)}" cy="${(200+96*Math.sin(a)).toFixed(1)}" r="${i<11?7:11}"${i<11?' style="fill:var(--frame)"':""}/>`}).join("")}</svg>`,
 assist:`<svg viewBox="0 0 640 400"><path class="s d" d="M150,320 C230,190 400,300 432,128"/><circle class="s" cx="434" cy="120" r="30" opacity=".35"/><circle class="s" cx="434" cy="120" r="16"/><circle class="f" cx="434" cy="120" r="6"/></svg>`};
-const FEAT=["renewal","assessorias","assist"];
+const FEAT=["renewal","annual","assessorias","assist"];
 let lang="en",route=location.hash.slice(1);
 const CS=()=>lang==="pt"?CASES.map(c=>{const p=PT[c.id];return {...c,...p,stats:c.stats&&c.stats.map((s,i)=>[s[0],p.sc[i]])}}):CASES;
 const byId=id=>CS().find(c=>c.id===id);
@@ -738,7 +742,7 @@ function splash(L){
   return `<section class="splash"><figure class="wall"><img src="workspace.webp" alt="${lang==="pt"?"Mesa de trabalho da Lu":"Lu’s desk"}"><a class="sign s1" href="#work">${L.nav[0]}</a><a class="sign s2" href="#about">${L.nav[1]}</a><a class="sign s3" href="#contact">${L.nav[2]}</a></figure><p class="k">Lu Paes · ${KICK[lang]}</p></section>`}
 function home(L){
   const x=X[lang],all=CS(),f=FEAT.map(byId),r=all.filter(c=>!FEAT.includes(c.id));
-  const row=c=>`<a href="#${c.id}" data-k="feat" data-cur="${L.read}"><span class="cover" aria-hidden="true">${COV[c.id]}</span><small>${area(c)}</small><span class="t">${c.title}</span><span class="d">${c.card}</span><span class="r">${c.pv}</span></a>`;
+  const row=c=>`<a href="#${c.id}" data-k="feat" data-cur="${L.read}"><span class="cover" aria-hidden="true">${COV[c.id]}</span><span class="t">${c.title}</span><span class="d">${c.card}</span></a>`;
   const mini=c=>`<a href="#${c.id}" data-k="mini" data-cur="${L.open}" data-pv="${c.pv}"><small>${area(c)}</small><span class="t">${c.title}</span></a>`;
   return `<section class="sec" id="work" style="margin-top:0"><h2 class="sh"><i>01</i>${x.sh1}</h2><ol class="rows feat">${f.map(c=>`<li>${row(c)}</li>`).join("")}</ol></section>
 <section class="sec"><h2 class="sh"><i>02</i>${x.sh2}</h2><ol class="rows mini">${r.map(c=>`<li>${mini(c)}</li>`).join("")}</ol></section>
@@ -774,7 +778,7 @@ function render(){
   app.innerHTML=c?view(L,c):route==="about"?about(L):route==="contact"?contact(L):route==="work"?home(L):splash(L);
   document.querySelectorAll("#nav a").forEach((a,i)=>{a.textContent=L.nav[i];a.setAttribute("aria-current",(i===0&&(c||route==="work"))||(i===1&&route==="about")||(i===2&&route==="contact")?"page":"false")});
   document.getElementById("f1").textContent=x.f1;document.getElementById("f2").innerHTML=x.f2;
-  document.title=(c?c.title:route==="about"?x.ah:route==="contact"?L.nav[2]:route==="work"?L.nav[0]:"Lu Paes")+(c||route?" | Lu Paes":"");
+  document.title=(c?c.title:route==="about"?x.ah:route==="contact"?L.nav[2]:route==="work"?L.nav[0]:"Lu Paes, senior product designer for internal tools and insurance")+(c||route?" | Lu Paes":"");
   window.scrollTo(0,0);reset();
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.6});
   app.querySelectorAll(".stat,.flow>div").forEach(s=>io.observe(s));
