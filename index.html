@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lu Paes, senior product designer for internal tools and insurance</title>
-<meta name="description" content="Senior product designer for internal tools, complex workflows and insurance products. UX research, UX/UI in Figma and design systems, built side by side with engineers.">
+<title>Lu Paes, senior product designer</title>
+<meta name="description" content="Senior product designer for complex products, internal tools and regulated markets. UX research, UX/UI in Figma and design systems, built side by side with engineers.">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -778,7 +778,7 @@ function render(){
   app.innerHTML=c?view(L,c):route==="about"?about(L):route==="contact"?contact(L):route==="work"?home(L):splash(L);
   document.querySelectorAll("#nav a").forEach((a,i)=>{a.textContent=L.nav[i];a.setAttribute("aria-current",(i===0&&(c||route==="work"))||(i===1&&route==="about")||(i===2&&route==="contact")?"page":"false")});
   document.getElementById("f1").textContent=x.f1;document.getElementById("f2").innerHTML=x.f2;
-  document.title=(c?c.title:route==="about"?x.ah:route==="contact"?L.nav[2]:route==="work"?L.nav[0]:"Lu Paes, senior product designer for internal tools and insurance")+(c||route?" | Lu Paes":"");
+  document.title=(c?c.title:route==="about"?x.ah:route==="contact"?L.nav[2]:route==="work"?L.nav[0]:"Lu Paes, senior product designer")+(c||route?" | Lu Paes":"");
   window.scrollTo(0,0);reset();
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.6});
   app.querySelectorAll(".stat,.flow>div").forEach(s=>io.observe(s));
