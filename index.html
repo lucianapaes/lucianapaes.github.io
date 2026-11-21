@@ -773,6 +773,8 @@ function contact(L){
 <section class="sec"><h2 class="lead">${x.hh}</h2><div class="hlp">${x.hp.map(p=>`<div class="hc"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"/></svg><b>${p[0]}</b><p>${p[1]}</p></div>`).join("")}</div><p class="hend">${x.hend}</p></section>`}
 const app=document.getElementById("app"),cur=document.getElementById("cur"),pv=document.getElementById("pv"),prog=document.getElementById("prog");
 function render(){
+  // unknown hashes (e.g. #toggle-goatcounter) show the home photo
+  if(route&&!byId(route)&&!["work","about","contact"].includes(route))route="";
   const L=I[lang],x=X[lang],c=byId(route);
   document.documentElement.lang=lang==="pt"?"pt-BR":"en";
   document.documentElement.classList.toggle("sp",!c&&!route);
